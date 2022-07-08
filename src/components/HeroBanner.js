@@ -12,6 +12,7 @@ const HeroBanner = () => {
     }}
       position='relative'
       p='20px'
+      className='hero-box'
     >
         <Typography color='#C7964F' fontWeight='600' fontSize='26px'>
               FIT-KINGS
@@ -30,7 +31,7 @@ const HeroBanner = () => {
         <Typography color='rgb(238 238 238)' fontSize='22px' lineHeight='35px' mb={3}>
                 Start the grind NOW
       </Typography>
-      <Button variant='contained' style={{ backgroundColor: '#C7964F' }} href='#exercises'>Exercices</Button>
+      <Button variant='contained' style={{ backgroundColor: '#C7964F', color:'#fff' }} href='#exercises'>Exercices</Button>
       <img src={ExerciseSVG} className='hero-banner-svg'/>
       <img src={HeroBannerImage} alt="banner" className='hero-banner-img'/>
       </ Box>

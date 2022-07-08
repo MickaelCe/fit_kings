@@ -51,7 +51,7 @@ body {
     display: flex;
     flex-wrap: wrap;
   }
-  
+
   .detail-image {
     width: 729px;
     height: 742px;
@@ -61,7 +61,7 @@ body {
     position: absolute;
     right: 40px;
     top: 0px;
-    width: 700px;
+    width: 640px;
     height: 900px;
     margin-top: -330px;
   }
@@ -131,7 +131,7 @@ body {
     .right-arrow {
       position: static !important;
     }
-  
+
     .hero-banner-img {
       display: none;
     }
@@ -146,13 +146,31 @@ body {
     }
 
     .hero-banner-svg{
-      display: none;
+
+      opacity: 0.2;
+      height: 200px;
+      width: 80%;
+      position: absolute;
+      margin-top: -270px;
+      left: -10px;
     }
-  
+
   }
+
+  
   
   @media screen and (max-width:400px) {
     .exercise-card {
       width: 280px;
+    }
+
+    .hero-banner-svg{
+      opacity: 0.2;
+      height: 200px;
+      width: 100%;
+      position: absolute;
+      margin-top: -270px;
+      left: -10px;
+      transform: rotate(-45deg);
     }
   }

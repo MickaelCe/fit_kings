@@ -27,7 +27,7 @@ const Navbar = () => {
       direction='row'
       justifyContent='space-around'
       sx={{
-        gap: { sm: '122px', xs: '40px' },
+        gap: { sm: '102px', xs: '40px' },
         mt: { sm: '32px', xs: '20px' },
         justifyContent: 'none'
       }}
@@ -41,6 +41,7 @@ const Navbar = () => {
         gap='40px'
         fontSize='24px'
         alignItems='flex-end'
+        className='nav-menu'
       >
       <Link to='/'  style={{textDecoration: 'none', color: '#eee', borderBottom: '3px solid #C7964F'}}>
           Home
