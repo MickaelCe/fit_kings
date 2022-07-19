@@ -1,32 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Button, Stack, TextField, Typography } from '@mui/material';
-import { exerciceOptions, fetchData } from '../utils/fetchData';
+import { exerciseOptions, fetchData } from '../utils/fetchData';
 import HorizontalScrollbar from './HorizontalScrollbar';
 
-const SearchExercises = ({setExercices, bodyPart, setBodyPart}) => {
+const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
   const [search, setSearch] = useState('');
   const [bodyParts, setBodyParts] = useState([]);
 
   useEffect(() => {
-    const fetchExercicesData = async () => {
-      const bodyPartsData = await fetchData('https://exercicedb.p.rapidapi.com/exercises/bodyPartList', exerciceOptions);
+    const fetchExercisesData = async () => {
+      const bodyPartsData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList', exerciseOptions);
       setBodyParts(['all', ...bodyPartsData]);
     }
-    fetchExercicesData();
+    fetchExercisesData();
   }, [])
   
 
   const handleSearch = async () => {
     if (search) {
-      const exercicesData = await fetchData('https://exercicedb.p.rapidapi.com/exercises', exerciceOptions);
-      const searchedExercises = exercicesData.filter(
-        (exercice) => exercice.name.toLowerCase().includes(search)
-          || exercice.target.toLowerCase().includes(search)
-          || exercice.equipement.toLowerCase().includes(search)
-          || exercice.bodyPart.toLowerCase().includes(search)
+      const exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
+      const searchedExercises = exercisesData.filter(
+        (exercise) => exercise.name.toLowerCase().includes(search)
+          || exercise.target.toLowerCase().includes(search)
+          || exercise.equipment.toLowerCase().includes(search)
+          || exercise.bodyPart.toLowerCase().includes(search)
       );
       setSearch('');
-      setExercices(searchedExercises);
+      setExercises(searchedExercises);
     }
   }
 
@@ -46,8 +46,9 @@ const SearchExercises = ({setExercices, bodyPart, setBodyPart}) => {
         }}
         mb="50px"
         textAlign="center"
+        color='#fff'
       >
-        Awesome exercices <br /> you should try
+        Awesome exercises <br /> you should try
       </Typography>
       <Box position='relative' mb='72px'>
         <TextField
@@ -66,7 +67,7 @@ const SearchExercises = ({setExercices, bodyPart, setBodyPart}) => {
           height='76px'
           value={search}
           onChange={(e) => setSearch(e.target.value.toLowerCase())}
-          placeholder='Search exercices'
+          placeholder='Search exercises'
           type='text'
         />
         <Button className='search-btn'
