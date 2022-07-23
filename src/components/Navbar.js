@@ -43,10 +43,10 @@ const Navbar = () => {
         alignItems='flex-end'
         className='nav-menu'
       >
-      <Link to='/'  style={{textDecoration: 'none', color: '#eee', borderBottom: '3px solid #C7964F'}}>
+      <Link to='/'  style={{textDecoration: 'none', color: '#eee', borderBottom: '3px solid #C7964F', fontWeight:'bold'}}>
           Home
       </Link>
-        <a href="#exercise" style={{textDecoration: 'none', color:'#eee'}}> Exercises </a>
+        <a href="#exercises" style={{textDecoration: 'none', color:'#eee', fontWeight:'bold'}}> Exercises </a>
       </Stack>
     </Stack>
   )

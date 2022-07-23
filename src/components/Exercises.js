@@ -3,7 +3,10 @@ import ExerciseCard from './ExerciseCard';
 import Pagination from '@mui/material/Pagination';
 import { Box, Stack, Typography } from '@mui/material';
 
+
 import { exerciseOptions, fetchData } from '../utils/fetchData';
+
+
 
 const Exercises = ({ exercises, bodyPart, setExercises }) => {
 
@@ -23,7 +26,7 @@ const Exercises = ({ exercises, bodyPart, setExercises }) => {
       let exercisesData = [];
 
       if (bodyPart === 'all') {
-        exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList', exerciseOptions);
+        exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
       } else {
         exercisesData = await fetchData(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`, exerciseOptions);
       }
@@ -31,6 +34,9 @@ const Exercises = ({ exercises, bodyPart, setExercises }) => {
     }
     fetchExercisesData();
   }, [bodyPart])
+
+
+
   
   return (
     <Box id='exercises'
@@ -39,7 +45,7 @@ const Exercises = ({ exercises, bodyPart, setExercises }) => {
       p='20px'
     >
       <Typography variant='h3' mb='46px' color='#fff'>
-        Showing Results
+        Showing Results :
       </Typography>
       <Stack direction='row' sx={{ gap: { lg: '110px', xs: '50px' } }}
         flexWrap="wrap"
